@@ -1,0 +1,410 @@
+/* Style globalne */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Akaya Kanadaka', cursive;
+    background-color: #f8f4e5;
+    color: #555;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+header {
+    background-color: #f0d9cc;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #d18c79;
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d18c79;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #a86c5d;
+}
+
+/* Home  */
+#home {
+    padding: 60px 0;
+}
+
+.home-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.home-content img {
+    max-width: 100%;
+    height: auto;
+    flex: 1;
+    min-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-description {
+    flex: 1;
+    min-width: 300px;
+}
+
+.home-description h2 {
+    color: #d18c79;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.home-description p, .home-description ul {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.home-description ul {
+    padding-left: 20px;
+}
+
+/* Przepisy */
+#przepisy {
+    padding: 60px 0;
+    background-color: #eae2d0;
+}
+
+#przepisy h2 {
+    text-align: center;
+    color: #d18c79;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+}
+
+/* Filtr */
+
+.filter-container {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    background-color: #f8f4e5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-input-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#productFilter {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Akaya Kanadaka', cursive;
+    font-size: 1rem;
+}
+
+#addFilterBtn {
+    background-color: #d18c79;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Akaya Kanadaka', cursive;
+    transition: background-color 0.3s;
+}
+
+#addFilterBtn:hover {
+    background-color: #a86c5d;
+}
+
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #d18c79;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.filter-tag .remove-filter {
+    background: none;
+    border: none;
+    color: white;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Przepisy grid */
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.recipe-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipe-card h3 {
+    padding: 15px;
+    text-align: center;
+    color: #d18c79;
+    font-size: 1.3rem;
+}
+
+.recipe-card.hidden {
+    display: none;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #f8f4e5;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close {
+    color: #d18c79;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #a86c5d;
+}
+
+#recipeDetails h2 {
+    color: #d18c79;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#recipeDetails h3 {
+    color: #a86c5d;
+    margin: 15px 0 10px;
+    font-size: 1.4rem;
+}
+
+#recipeDetails ul, #recipeDetails ol {
+    margin-bottom: 15px;
+    padding-left: 25px;
+}
+
+#recipeDetails li {
+    margin-bottom: 5px;
+}
+
+/* Kontakt */
+#kontakt {
+    padding: 60px 0;
+}
+
+#kontakt h2 {
+    text-align: center;
+    color: #d18c79;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+
+#kontakt p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #a86c5d;
+    font-size: 1.1rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Akaya Kanadaka', cursive;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #d18c79;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Akaya Kanadaka', cursive;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #a86c5d;
+}
+
+/* Form */
+.form-message {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Footer */
+footer {
+    background-color: #f0d9cc;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #a86c5d;
+}
+
+/* Responsywnosc */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+    }
+    
+    nav ul li {
+        margin: 0 15px;
+    }
+    
+    .home-content {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .filter-input-wrapper {
+        flex-direction: column;
+    }
+} 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunchbox Studenta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Lunchbox Studenta</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#przepisy">Przepisy</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <div class="home-content">
+                <img src="img/tarta-z-widelcem-i-nozem.jpg" alt="Tarta z widelcem i nożem">
+                <div class="home-description">
+                    <h2>Witaj w Lunchbox Studenta!</h2>
+                    <p>Jesteś studentem i szukasz prostych, szybkich i sycących przepisów? Trafiłeś idealnie! Nasza strona została stworzona z myślą o zabieganych studentach, którzy chcą zdrowo i smacznie zjeść, nie wydając fortuny.</p>
+                    <p>Znajdziesz tu przepisy, które:</p>
+                    <ul>
+                        <li>Są szybkie w przygotowaniu</li>
+                        <li>Zawierają łatwo dostępne składniki</li>
+                        <li>Nie zrujnują studenckiego budżetu</li>
+                        <li>Są pełnowartościowe i sycące</li>
+                    </ul>
+                    <p>Zapraszamy do odkrywania studenckich przysmaków!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="przepisy">
+        <div class="container">
+            <h2>Przepisy</h2>
+            
+            <div class="filter-container">
+                <div class="filter-input-wrapper">
+                    <input type="text" id="productFilter" placeholder="Wpisz składnik, np. kurczak, makaron...">
+                    <button id="addFilterBtn">Dodaj filtr</button>
+                </div>
+                <div class="active-filters" id="activeFilters">
+                    <!-- Tutaj będą dodawane aktywne filtry -->
+                </div>
+            </div>
+            
+            <div class="recipes-grid">
+                <div class="recipe-card" data-recipe="cezar">
+                    <img src="img/cezar.webp" alt="Sałatka Cezar">
+                    <h3>Sałatka Cezar</h3>
+                </div>
+                <div class="recipe-card" data-recipe="carbonara">
+                    <img src="img/Carbonara.webp" alt="Spaghetti Carbonara">
+                    <h3>Spaghetti Carbonara</h3>
+                </div>
+                <div class="recipe-card" data-recipe="bowl">
+                    <img src="img/bowl.webp" alt="Keto bowl z łososiem">
+                    <h3>Keto bowl z łososiem</h3>
+                </div>
+                <div class="recipe-card" data-recipe="wrap">
+                    <img src="img/Wrap.jpeg" alt="Wrap z kurczakiem i warzywami">
+                    <h3>Wrap z kurczakiem i warzywami</h3>
+                </div>
+                <div class="recipe-card" data-recipe="placuszki">
+                    <img src="img/placuszki.webp" alt="Białkowe placuszki śniadaniowe">
+                    <h3>Białkowe placuszki śniadaniowe</h3>
+                </div>
+                <div class="recipe-card" data-recipe="placuszki2">
+                    <img src="img/placuszki2.jpeg" alt="Proteinowe placuszki czekoladowe">
+                    <h3>Proteinowe placuszki czekoladowe</h3>
+                </div>
+                <div class="recipe-card" data-recipe="zapiekanka">
+                    <img src="img/zapiekanka.jpeg" alt="Ekspresowa zapiekanka makaronowa">
+                    <h3>Ekspresowa zapiekanka makaronowa</h3>
+                </div>
+                <div class="recipe-card" data-recipe="makaron">
+                    <img src="img/makaron.jpeg" alt="Orientalny makaron udon z warzywami i kurczakiem">
+                    <h3>Orientalny makaron udon z warzywami i kurczakiem</h3>
+                </div>
+                <div class="recipe-card" data-recipe="ommlet">
+                    <img src="img/omlet.jpeg" alt="Omlet z serkiem, rzodkiewką, ogórkiem i szczypiorkiem">
+                    <h3>Omlet z serkiem, rzodkiewką, ogórkiem i szczypiorkiem</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="recipeDetails"></div>
+        </div>
+    </div>
+
+    <section id="kontakt">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <p>Masz swój własny studencki przepis? Podziel się nim z nami!</p>
+            <form action="php/send_email.php" method="post">
+                <div class="form-group">
+                    <label for="name">Imię i nazwisko:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipe">Twój przepis:</label>
+                    <textarea id="recipe" name="recipe" rows="6" required></textarea>
+                </div>
+                <button type="submit">Wyślij przepis</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Lunchbox Studenta. Wszystkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
